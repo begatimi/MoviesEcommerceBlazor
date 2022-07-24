@@ -7,12 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\ProductDetails.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.5" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Shared\MoviesEcommerceBlazor.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\ProductDetails.razor" />
   </ItemGroup>
 
 </Project>

@@ -17,5 +17,11 @@ namespace MoviesEcommerceBlazor.Client.Services.ProductService
             if (result != null && result.Data != null)
                 Products = result.Data;
         }
+
+        public async Task<ServiceResponse<Product>> GetProduct(int productId)
+        {
+            var result = await _http.GetFromJsonAsync<ServiceResponse<Product>>($"api/product/{productId}");
+                return result;
+        }
     }
 }

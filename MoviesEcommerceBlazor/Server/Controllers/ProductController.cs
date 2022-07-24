@@ -15,11 +15,18 @@ namespace MoviesEcommerceBlazor.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProduktet()
+        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProducts()
         {
             var result = await _productService.GetProductsAsync();
             return(result);
         }
+
+        [HttpGet("{productId}")]
+        public async Task<ActionResult<ServiceResponse<Product>>> GetProduct(int productId)
+        {
+            var result = await _productService.GetProductAsync(productId);
+            return Ok(result);
+        } 
 
     }
 }
