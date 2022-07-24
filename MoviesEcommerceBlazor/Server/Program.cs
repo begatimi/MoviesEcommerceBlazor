@@ -2,6 +2,7 @@ global using MoviesEcommerceBlazor.Shared;
 global using Microsoft.EntityFrameworkCore;
 global using MoviesEcommerceBlazor.Server.Data;
 global using MoviesEcommerceBlazor.Server.Services.ProductService;
+global using MoviesEcommerceBlazor.Server.Services.CategoryService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 
